@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Clientes">
+        <menu>
+            <item
+                android:id="@+id/lista_clientes"
+                android:icon="@drawable/lista"
+                android:title="Lista" />
+            <item
+                android:id="@+id/mapa_clientes"
+                android:icon="@drawable/location_on"
+                android:title="Mapa" />
+        </menu>
+    </item>
+
+    <item android:title="Configuración">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/perfi_usuario"
+                    android:icon="@drawable/ic_person_outline_black_24dp"
+                    android:title="Perfil" />
+                <item
+                    android:id="@+id/op_admin"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Admin" />
+            </group>
+
+        </menu>
+    </item>
+
+
+
+
+</menu>

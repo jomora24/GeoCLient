@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".PerfilFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <EditText
+            android:background="@drawable/capsule"
+            android:id="@+id/etNombre"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Nombre"
+            android:paddingLeft="25dp"
+            android:inputType="text" />
+        <EditText
+            android:background="@drawable/capsule"
+            android:id="@+id/etPaterno"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Apellido Paterno"
+            android:paddingLeft="25dp"
+            android:inputType="text" />
+        <EditText
+            android:background="@drawable/capsule"
+            android:id="@+id/etMaterno"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Apellido Materno"
+            android:paddingLeft="25dp"
+            android:inputType="text" />
+        <EditText
+            android:background="@drawable/capsule"
+            android:id="@+id/etCelular"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Celular"
+            android:paddingLeft="25dp"
+            android:inputType="textPhonetic" />
+        <EditText
+            android:background="@drawable/capsule"
+            android:id="@+id/etEmail"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Email"
+            android:paddingLeft="25dp"
+            android:inputType="text" />
+
+        <EditText
+            android:background="@drawable/capsule"
+            android:id="@+id/etPass"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Nuevo Password"
+            android:paddingLeft="25dp"
+            android:inputType="textPassword" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+            <Button
+                android:background="@drawable/capsule"
+                android:id="@+id/btnCancelar"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:layout_margin="10dp"
+                android:textColor="#808080"/>
+            <Button
+                android:id="@+id/btnAceptar"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/stylebuttongreen"
+                android:layout_margin="10dp"
+                android:text="Aceptar"
+
+                android:textColor="#fff"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

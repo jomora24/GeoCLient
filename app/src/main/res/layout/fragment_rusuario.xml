@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RUsuarioFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/etRNombre"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Nombre"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/etRPaterno"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Apellido Paterno"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/etRMaterno"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Apellido Materno"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/etRCelular"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Celular"
+            android:inputType="textPhonetic" />
+        <EditText
+            android:id="@+id/etREmail"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Email"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etRPass"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/stylebuttongreen"
+            android:text="Registar"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
+</LinearLayout>
