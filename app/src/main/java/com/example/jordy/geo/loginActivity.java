@@ -34,10 +34,6 @@ public class loginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPass);
 
-        btnIngresar = findViewById(R.id.btnIngresar);
-        etEmail = findViewById(R.id.etEmail);
-        etPass = findViewById(R.id.etPass);
-
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,19 +44,21 @@ public class loginActivity extends AppCompatActivity {
 
 
     public void login(){
-        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.1.3/wsgeoclient/login.php",
+        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.1.2/wsgeoclient/login.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         // SE EJECUTA CUANDO LA CONSULTA SALIO BIEN, SIN ERRORES
                         if (response.equals("0")){
-                            Toast.makeText(getApplicationContext(), "Username o Password incorrectos", Toast.LENGTH_SHORT).show();
-                        }else {
-                            try {
-                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                                startActivity( new Intent(loginActivity.this, NavegationActivity.class));
+                            Toast.makeText(loginActivity.this, "Username o Password incorrectos", Toast.LENGTH_SHORT).show();
 
-                                JSONArray jsonArray = new JSONArray();
+                        }
+                        else{
+
+                            Toast.makeText(loginActivity.this, response, Toast.LENGTH_SHORT).show();
+                            startActivity( new Intent(loginActivity.this, NavegationActivity.class));
+
+                                /*JSONArray jsonArray = new JSONArray();
                                 // OBTENEMOS LOS DATOS QUE DEVUELVE EL SERVIDOR
                                 String ci_usuario = jsonArray.getJSONObject(0).getString("ci_usuario");
                                 String nombre = jsonArray.getJSONObject(0).getString("nombre");
@@ -68,19 +66,15 @@ public class loginActivity extends AppCompatActivity {
                                 String a_materno = jsonArray.getJSONObject(0).getString("a_materno");
                                 String foto = jsonArray.getJSONObject(0).getString("foto");
                                 String celular = jsonArray.getJSONObject(0).getString("celular");
-                                String email = jsonArray.getJSONObject(0).getString("email");
+                                String email = jsonArray.getJSONObject(0).getString("email");*/
 
 
-
-                            }catch (Exception e){
-                                e.printStackTrace();
-                            }
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(loginActivity.this, "No hay Conexion a Internet", Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
