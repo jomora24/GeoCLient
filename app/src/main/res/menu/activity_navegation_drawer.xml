@@ -5,20 +5,19 @@
 
     <item android:title="Clientes">
         <menu>
-            <item
-                android:id="@+id/lista_clientes"
-                android:icon="@drawable/lista"
-                android:title="Lista" />
-            <item
-                android:id="@+id/mapa_clientes"
-                android:icon="@drawable/location_on"
-                android:title="Mapa" />
-        </menu>
-    </item>
-
-    <item android:title="Configuración">
-        <menu>
             <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/inicio"
+                    android:icon="@drawable/home"
+                    android:title="Inicio" />
+                <item
+                    android:id="@+id/lista_clientes"
+                    android:icon="@drawable/lista"
+                    android:title="Lista" />
+                <item
+                    android:id="@+id/mapa_clientes"
+                    android:icon="@drawable/location_on"
+                    android:title="Mapa" />
                 <item
                     android:id="@+id/perfi_usuario"
                     android:icon="@drawable/ic_person_outline_black_24dp"
@@ -28,7 +27,6 @@
                     android:icon="@drawable/ic_menu_send"
                     android:title="Admin" />
             </group>
-
         </menu>
     </item>
 

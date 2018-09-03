@@ -75,6 +75,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             android:gravity="center">
+
             <Button
                 android:background="@drawable/capsule"
                 android:id="@+id/btnCancelar"

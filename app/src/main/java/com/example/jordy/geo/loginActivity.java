@@ -16,6 +16,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,21 +46,19 @@ public class loginActivity extends AppCompatActivity {
 
 
     public void login(){
-        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.1.2/wsgeoclient/login.php",
-                new Response.Listener<String>() {
+        StringRequest  request = new StringRequest (Request.Method.POST, "http://192.168.1.39/wsgeoclient/login.php",
+                new Response.Listener<String >() {
                     @Override
                     public void onResponse(String response) {
                         // SE EJECUTA CUANDO LA CONSULTA SALIO BIEN, SIN ERRORES
                         if (response.equals("0")){
                             Toast.makeText(loginActivity.this, "Username o Password incorrectos", Toast.LENGTH_SHORT).show();
-
                         }
                         else{
-
                             Toast.makeText(loginActivity.this, response, Toast.LENGTH_SHORT).show();
                             startActivity( new Intent(loginActivity.this, NavegationActivity.class));
-
-                                /*JSONArray jsonArray = new JSONArray();
+                            /*try {
+                                JSONArray jsonArray = new JSONArray();
                                 // OBTENEMOS LOS DATOS QUE DEVUELVE EL SERVIDOR
                                 String ci_usuario = jsonArray.getJSONObject(0).getString("ci_usuario");
                                 String nombre = jsonArray.getJSONObject(0).getString("nombre");
@@ -66,7 +66,18 @@ public class loginActivity extends AppCompatActivity {
                                 String a_materno = jsonArray.getJSONObject(0).getString("a_materno");
                                 String foto = jsonArray.getJSONObject(0).getString("foto");
                                 String celular = jsonArray.getJSONObject(0).getString("celular");
-                                String email = jsonArray.getJSONObject(0).getString("email");*/
+                                String email = jsonArray.getJSONObject(0).getString("email");
+
+                                Intent intent = new Intent(loginActivity.this, NavegationActivity.class);
+                                intent.putExtra("ci_usuario", ci_usuario);
+                                intent.putExtra("nombre", nombre);
+                                intent.putExtra("ci_usuario", ci_usuario);
+
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }*/
+
 
 
                         }

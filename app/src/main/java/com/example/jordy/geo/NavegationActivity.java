@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,9 +17,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class NavegationActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,ClientesFragment.OnFragmentInteractionListener, PerfilFragment.OnFragmentInteractionListener,AdminFragment.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener,ClientesFragment.OnFragmentInteractionListener, PerfilFragment.OnFragmentInteractionListener,AdminFragment.OnFragmentInteractionListener, inicioFragment.OnFragmentInteractionListener{
+    ////////////////////////////////////////
+    TextView txtNombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +48,11 @@ public class NavegationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
 
+        ///////////////////////////////////////////////////////
+        txtNombreUsuario = findViewById(R.id.txtNombreUsuario);
+        //llenarDatosUsuario();
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -86,13 +94,15 @@ public class NavegationActivity extends AppCompatActivity
         Fragment miFragment = null;
         boolean fragmentSeleccionado = false;
 
-        if (id == R.id.lista_clientes) {
+        if (id == R.id.inicio) {
+            miFragment = new inicioFragment();
+            fragmentSeleccionado = true;
+        } else if (id == R.id.lista_clientes) {
             miFragment = new ClientesFragment();
             fragmentSeleccionado = true;
         } else if (id == R.id.mapa_clientes) {
             Intent ingresar = new Intent(NavegationActivity.this,MapsActivity.class);
             startActivity(ingresar);
-
         } else if (id == R.id.perfi_usuario) {
             miFragment = new PerfilFragment();
             fragmentSeleccionado = true;
@@ -113,5 +123,11 @@ public class NavegationActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    /////////////////////////////////////
+    public void llenarDatosUsuario(){
+        Bundle bundle = getIntent().getExtras();
+        txtNombreUsuario.setText("Hola "+bundle.getString("nombre"));
     }
 }
